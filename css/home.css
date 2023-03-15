@@ -30,6 +30,7 @@
 
 html {
     scrollbar-width: none; /** Hide the scrollbar on the whole page **/
+    scroll-behavior: smooth;
 }
 
 body {
@@ -47,8 +48,8 @@ main {
     width: calc(100% - 240px);
 }
 
-.home {
-    background-color: red;
+#home {
+    scroll-margin-top: 80px;
     height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;

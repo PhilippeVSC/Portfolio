@@ -91,6 +91,10 @@ main {
     transform: rotate(90deg);
 }
 
+.side_bar--right .e-mail:hover {
+    cursor: vertical-text;
+}
+
 .center {
     width: calc(100% - 240px);
 }

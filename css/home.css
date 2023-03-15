@@ -43,63 +43,12 @@ main {
     height: 5000px;
 }
 
-.side_bar {
-    width: 120px;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-}
-
-.side_bar--left div {
-    height: calc(100% - 650px);
-    width: 4px;
-    background-color: var(--gray);
-}
-
-.side_bar--left .icon {
-    width: 26px;
-    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    filter: invert(74%) sepia(0%) saturate(1889%) hue-rotate(164deg) brightness(79%) contrast(81%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
-}
-
-.instagram-icon, .linkedin-icon {
-    margin-bottom: 30px;
-}
-
-.github-icon {
-    margin-bottom: 45px;
-}
-
-.side_bar--right div {
-    height: calc(100% - 650px);
-    width: 4px;
-    background-color: var(--gray);
-}
-
-.icon:hover {
-    cursor: pointer;
-    transform: translateX(6px);
-}
-
-.side_bar--right .e-mail {
-    margin-bottom: 174px;
-    color: var(--gray);
-    font-family: "Poppins-Medium";
-    font-size: 21px;
-    transform: rotate(90deg);
-}
-
-.side_bar--right .e-mail:hover {
-    cursor: vertical-text;
-}
-
 .center {
     width: calc(100% - 240px);
 }
 
 .home {
+    background-color: red;
     height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
@@ -107,7 +56,7 @@ main {
 }
 
 .summerise {
-    margin-top: 195px;
+    margin-top: 180px;
     width: 82%;
     height: 400px;
 }
@@ -121,7 +70,7 @@ main {
 .summerise p:nth-of-type(2){
     color: var(--white);
     font-family: "Poppins-Bold";
-    margin: 8px 0 35px 0;
+    margin: 20px 0 40px 0;
     font-size: 82px;
 }
 
@@ -129,25 +78,25 @@ main {
     color: var(--gray);
     font-family: "CascadiaMono";
     font-size: 30px;
-    line-height: 35px;
+    line-height: 40px;
 }
 
 .summerise span {
     color: var(--green);
 }
 
-.button {
+.projects_button {
     background-color: brown;
 
     height: 95px;
     width: 400px;
-    margin-top: 110px;
+    margin-top: 120px;
     position: relative;
 
     overflow: hidden;
 }
 
-.projects_button {
+.visible_button {
     background-color: var(--dark-gray);
     width: 400px;
     height: 95px;
@@ -164,7 +113,7 @@ main {
     color: var(--green);
 }
 
-.projects_button:hover {
+.visible_button:hover {
     cursor: pointer;
 }
 
@@ -189,8 +138,12 @@ main {
     transform: skew(42deg);
 }
 
-.projects_button:hover .hidden_button {
+.visible_button:hover .hidden_button {
     transform: skew(-42deg) translateX(0);
+}
+
+.visible_button:hover:after .hidden_button {
+    transform: skew(-42deg) translateX(480px);
 }
 
 .hidden_button:active {

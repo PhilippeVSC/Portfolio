@@ -1,0 +1,51 @@
+.side_bar {
+    width: 120px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.side_bar--left div {
+    height: calc(100% - 650px);
+    width: 4px;
+    background-color: var(--gray);
+}
+
+.side_bar--left .icon {
+    width: 26px;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    filter: invert(74%) sepia(0%) saturate(1889%) hue-rotate(164deg) brightness(79%) contrast(81%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
+}
+
+.instagram-icon, .linkedin-icon {
+    margin-bottom: 30px;
+}
+
+.github-icon {
+    margin-bottom: 45px;
+}
+
+.side_bar--right div {
+    height: calc(100% - 650px);
+    width: 4px;
+    background-color: var(--gray);
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: translateX(6px);
+}
+
+.side_bar--right .e-mail {
+    margin-bottom: 174px;
+    color: var(--gray);
+    font-family: "Poppins-Medium";
+    font-size: 21px;
+    transform: rotate(90deg);
+}
+
+.side_bar--right .e-mail:hover {
+    cursor: vertical-text;
+}

@@ -1,4 +1,73 @@
 #projects {
     height: 100vh;
-    background-color: blueviolet;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects--container {
+    height: 100%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project_box {
+    width: 23vw;
+    height: 23vw;
+    position: relative;
+
+    background-size: 100%;
+    background-position: center;
+    overflow: hidden;
+
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.project_box .title {
+    font-family: "Poppins-Bold";
+    font-size: 28px;
+    color: var(--white);
+    margin-left: 30px;
+    margin-top: 20px;
+
+    transform: translateY(-150%);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.description_box {
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    background-color: var(--black);
+
+    position: absolute;
+    bottom: 0;
+
+    transform: translateY(100%);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.description_box p {
+    font-family: "CascadiaMono";
+    font-size: 20px;
+    color: var(--white);
+}
+
+.project_box:hover .description_box {
+    transform: translateY(0%);
+}
+
+.project_box:hover {
+    background-color: grey;
+    background-blend-mode: multiply;
+    background-size: 102%;
+}
+
+.project_box:hover .title{
+    transform: translateY(0%);
 }

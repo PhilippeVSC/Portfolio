@@ -25,6 +25,8 @@
     background-position: center;
     overflow: hidden;
 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -70,4 +72,5 @@
 
 .project_box:hover .title{
     transform: translateY(0%);
+    text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
 }

@@ -1,6 +1,6 @@
 #about {
     height: 100vh;
-    scroll-margin-top: 90px;
+    scroll-margin-top: 130px;
 
     display: flex;
     align-items: center;
@@ -16,15 +16,16 @@
 .about_container {
     border-radius: 10px;
     margin-top: 50px;
+    height: 18vw;
     width: 80%;
     background-color: var(--black);
 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
 }
 
 .about_container img {
-    width: 15vw;
-    height: 15vw;
+    height: 18vw;
     border-radius: 10px 0 0 10px;
 
     float: left;
@@ -36,4 +37,44 @@
     font-family: "CascadiaMono";
     font-size: 24px;
     color: var(--gray);
+    line-height: 30px;
+}
+
+.competence_container {
+    margin-top: 30px;
+
+    width: 50%;
+    height: 50px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.competence_container .element {
+    display: inline-flex;
+    align-items: center;
+
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    color: var(--white);
+}
+
+.competence_container img {
+    margin: 10px;
+    height: 1.5vw;
+    filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(213deg) brightness(103%) contrast(102%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
+}
+
+.CV_button {
+    border-radius: 6px;
+
+    height: 95px;
+    width: 400px;
+    margin-top: 100px;
+    position: relative;
+
+    overflow: hidden;
 }

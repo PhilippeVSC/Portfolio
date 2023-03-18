@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/side_bar.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/about.css">
     <script src="script/script.js"></script>
     <script src="script/navbar.js"></script>
     <title>Portfolio</title>
@@ -18,7 +19,7 @@
             <ul>
                 <a href="#home">01. <span>ACCUEIL</span></a>
                 <a href="#projects">02. <span>PROJETS</span></a>
-                <a href="#projects">03. <span>A PROPOS</span></a>
+                <a href="#about">03. <span>A PROPOS</span></a>
                 <a href="#projects">04. <span>CONTACT</span></a>
             </ul>
         </nav>
@@ -48,17 +49,20 @@
                         parfois quelques <span>designs</span>.
                     </p>
                 </div>
-            <div class="projects_button">   
+            <a class="projects_button" href="#projects">   
                 <div class="visible_button">
                     <div class="hidden_button">
                         <p>PROJETS</p>
                     </div>
                     <p>PROJETS</p>
                 </div>
-            </div>  
+            </a>  
             </section>
 
             <section id="projects">
+                <div class="my_projects">
+                <p>Mes projets</p>
+                </div>
                 <div class="projects--container">
                     <div class="project_box burgersup" style="background-image: url(src/img/burgersup.PNG);">
                         <p class="title">BURGERSUP</p>
@@ -75,9 +79,28 @@
                     <div class="project_box calculatrice" style="background-image: url(src/img/calculatrice.PNG);">
                         <p class="title">CALCULATRICE</p>
                         <div class="description_box">
-                            <p>Conception d'une calculatrice en HTML Css et Javascript. Première expérimentation avec le responsive</p>
+                            <p>Conception d'une calculatrice en <span>HTML</span>, <span>Css</span> et <span>Javascript</span>. Première expérimentation avec le responsive</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <p class="title">À PROPOS DE MOI</p>
+                <div class="about_container">
+                    <div>
+                        <img src="src/img/photo.png">
+                    </div>
+                    <p>
+                        Bonjour, je suis Philippe Vives Carceller.
+                        J’ai 19 ans et j'ai obtenu un baccalauréat STI2D option SIN en 2022.
+                        Après l’obtention de mon diplôme, j’ai décidé de prendre une année sabbatique
+                        pour prendre du recul et réfléchir à ce que je veux vraiment faire plus tard.
+                        Au  cours de cette année j’ai eu l’opportunité d’expérimenter différents emplois
+                        et j’ai également pu apprendre le développement web pendant mon temps libre.
+                        Maintenant que l'année touche à sa fin, j'ai pris la décision de me consacrer
+                        au travail dans le domaine du développement web.
+                    </p>
                 </div>
             </section>
         </section>

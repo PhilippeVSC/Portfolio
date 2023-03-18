@@ -1,9 +1,32 @@
 #projects {
+    scroll-margin-top: 80px;
     height: 100vh;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.my_projects {
+    width: 80%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+}
+.my_projects p {
+    font-family: "CascadiaMono";
+    font-size: 25px;
+    color: var(--gray);
+    border-left: 3px solid var(--green);
+    padding-left: 10px;
+
+    animation: blink 0.80s step-end infinite;
+}
+
+@keyframes blink {
+    0% { border-color: var(--green) }
+    50% { border-color: transparent }
 }
 
 .projects--container {
@@ -17,6 +40,8 @@
 }
 
 .project_box {
+    border-radius: 6px;
+
     width: 23vw;
     height: 23vw;
     position: relative;
@@ -58,6 +83,10 @@
     font-family: "CascadiaMono";
     font-size: 20px;
     color: var(--white);
+}
+
+.description_box span {
+    color: var(--green);
 }
 
 .project_box:hover .description_box {

@@ -46,6 +46,8 @@ main {
 
 .center {
     width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
 }
 
 #home {
@@ -87,6 +89,8 @@ main {
 }
 
 .projects_button {
+    border-radius: 6px;
+    
     background-color: brown;
 
     height: 95px;
@@ -95,6 +99,7 @@ main {
     position: relative;
 
     overflow: hidden;
+    text-decoration: none;
 }
 
 .visible_button {

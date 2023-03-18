@@ -1,0 +1,39 @@
+#about {
+    height: 100vh;
+    scroll-margin-top: 90px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-family: "Poppins-Bold";
+    font-size: 50px;
+    color: var(--white);
+}
+
+.about_container {
+    border-radius: 10px;
+    margin-top: 50px;
+    width: 80%;
+    background-color: var(--black);
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.about_container img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 10px 0 0 10px;
+
+    float: left;
+    margin-right: 20px;
+}
+
+.about_container p {
+    margin: 20px;
+    font-family: "CascadiaMono";
+    font-size: 24px;
+    color: var(--gray);
+}

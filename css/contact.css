@@ -1,30 +1,128 @@
 #contact {
-    scroll-margin-top: 80px;
+
+    width: 100%;
     height: 100vh;
 
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .contact_container {
     width: 80%;
+    height: 100%;
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
-.left_part {
-    background-color: blueviolet;
-    width: 50%;
-    height: 100%;
+.contact--left_side, .contact--right_side {
+    width: 40%;
+    height: 500px;
 }
 
-.right_part {
-    width: 50%;
-    height: 100%;
+.contact--right_side {
+    display: flex;
+    justify-content: center;
 }
+
+.contact--left_side {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contact--left_side .title {
+    font-family: "Poppins-Bold";
+    font-size: 50px;
+    line-height: 60px;
+
+    margin-left: 50px;
+}
+
+.contact--left_side span {
+    color: var(--green);
+}
+
+.contact--left_side .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone_number, .email_adress {
+    margin-left: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    width: calc(100% - 100px);
+}
+
+.phone_number img, .email_adress img {
+    width:2.2em;
+    margin-right: 15px;
+
+    filter: invert(56%) sepia(71%) saturate(0%) hue-rotate(156deg) brightness(89%) contrast(92%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
+}
+
+.phone_number p, .email_adress p {
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+
+    color: var(--gray);
+}
+
+.email_adress {
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--gray);
+}
+
+.large_icon_container {
+    width: 100%;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.large_icon_container a {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline-offset: 0;
+
+    transition: all .2s ease-in-out;
+}
+
+.contact-icon {
+    width: 2em;
+    filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(213deg) brightness(103%) contrast(102%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
+}
+
+.large_icon_container a:hover {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+
+    background-color: var(--white);
+}
+
+.large_icon_container a:hover .contact-icon {
+    filter: invert(0%) sepia(40%) saturate(0%) hue-rotate(211deg) brightness(104%) contrast(87%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
+}
+
+
+/** RIGHT PART **/
+
 
 .input_box {
     background-color: var(--black);
@@ -34,7 +132,6 @@
     flex-direction: column;
     border-radius: 10px;
 
-    justify-content: right;
     padding-top: 10px;
 }
 

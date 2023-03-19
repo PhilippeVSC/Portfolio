@@ -1,5 +1,6 @@
 #projects {
     scroll-margin-top: 80px;
+    scroll-snap-align: center;
     height: 100vh;
 
     display: flex;
@@ -7,6 +8,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .my_projects {
     margin-top: 30px;
 
@@ -16,6 +18,7 @@
     display: flex;
     align-items: center;
 }
+
 .my_projects p {
     font-family: "CascadiaMono";
     font-size: 25px;
@@ -89,6 +92,10 @@
 
 .description_box span {
     color: var(--green);
+}
+
+.project_box {
+    text-decoration: none;
 }
 
 .project_box:hover .description_box {

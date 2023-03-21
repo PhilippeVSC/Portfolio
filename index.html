@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
 </head>
 <body>
+    <!-- Header
+         Nscroll & Scroll for both navbar, switching via js
+    -->
     <header class="header--nscroll">
         <nav class="nav--nscroll">
             <ul>
@@ -18,10 +21,11 @@
             </ul>
         </nav>
     </header>
-
+    <!-- Content -->
     <main>
+        <!-- Left Side Bar -->
         <section class="side_bar--left">
-            <div></div>
+            <div></div> <!-- Gray Bar -->
             <a href="https://github.com/PhilippeVSC" target="_blank" draggable="false">
                 <img class="github-icon icon" src="src/img/github-icon.svg" alt="github icon" draggable="false">
             </a>
@@ -32,10 +36,11 @@
                 <img class="linkedin-icon icon" src="src/img/linkedin-icon.svg" alt="linkedin icon" draggable="false">
             </a>
         </section>
-
+        <!-- Center Container -->
         <section class="center">
+            <!-- Home page -->
             <section id="home">
-                <div class="summerise">
+                <div class="summerise"> <!-- Text Container -->
                     <p>Bonjour, je m'appelle</p>
                     <p>Philippe Vives Carceller<span>.</span></p>
                     <p>Je crée des sites webs en <span>HTML</span> et <span>Css</span>,<br>
@@ -43,8 +48,10 @@
                         parfois quelques <span>designs</span>.
                     </p>
                 </div>
+            <!-- Projects Button -->
             <a class="projects_button" href="#projects">   
                 <div class="visible_button">
+                    <!-- Hidden Button Part for animation -->
                     <div class="hidden_button">
                         <p>PROJETS</p>
                     </div>
@@ -52,38 +59,43 @@
                 </div>
             </a>  
             </section>
-
+            <!-- Projects Page -->
             <section id="projects">
                 <div class="my_projects">
-                <p>Mes projets</p>
+                    <p>Mes projets</p>
                 </div>
+                <!-- Projects container -->
                 <div class="projects--container">
+                    <!-- Project n°1 -->
                     <a class="project_box burgersup" style="background-image: url(src/img/burgersup.PNG);" href="../BurgerSup v3/index.html" target="_blank" draggable="false">
                         <p class="title">BURGERSUP</p>
                         <div class="description_box">
-                            <p>Conception d'un site pour comptabiliser les heures supplémentaires. Réalisé en Html Css et Javascript</p>
+                            <p>Conception d'un site en <span>Html</span>, <span>Css</span> et <span>JS</span> pour comptabiliser les heures supplémentaires. Les heures sont stockées dans des <span>Arrays</span> et son ensuite comptabilisées.</p>
                         </div>
                     </a>
+                    <!-- Project n°2 -->
                     <a class="project_box morpion" style="background-image: url(src/img/Morpion.PNG);" href="../Tic Tac Toe/index.html" target="_blank" draggable="false">
                         <p class="title">MORPION</p>
                         <div class="description_box">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsa animi reprehenderit! Cum numquam repellendus, modi similique veritatis aut voluptatibus, neque quaerat harum quidem porro obcaecati natus ratione error doloribus?</p>
+                            <p>Conception d'un <span>Morpion</span> en <span>Html</span>, <span>Css</span> et <span>JS</span>. Première expérimentation avec le <span>darkmode.</span></p>
                         </div>
                     </a>
+                    <!-- Project n°3 -->
                     <a class="project_box calculatrice" style="background-image: url(src/img/calculatrice.PNG);" href="../Calculatrice/index.html" target="_blank" draggable="false">
                         <p class="title">CALCULATRICE</p>
                         <div class="description_box">
-                            <p>Conception d'une calculatrice en <span>HTML</span>, <span>Css</span> et <span>Javascript</span>. Première expérimentation avec le responsive</p>
+                            <p>Conception d'une calculatrice en <span>HTML</span>, <span>Css</span> et <span>JS</span>. Première expérimentation avec le <span>responsive</span></p>
                         </div>
                     </a>
                 </div>
             </section>
-
+            <!-- About Page -->
             <section id="about">
                 <p class="title">À PROPOS DE MOI</p>
+                <!-- About Container -->
                 <div class="about_container">
                     <div>
-                        <img src="src/img/photo.png" draggable="false">
+                        <img src="src/img/photo.png" draggable="false"> <!-- Picture of me -->
                     </div>
                     <p>
                         Bonjour, je suis Philippe Vives Carceller.
@@ -96,23 +108,28 @@
                         au travail dans le domaine du développement web.
                     </p>
                 </div>
+                <!-- Infos container -->
                 <div class="competence_container">
+                    <!-- Location -->
                     <div class="element">
                         <img src="src/img/marker.svg" draggable="false">
                         <p>Rouen</p>
                     </div>
+                    <!-- Driver's liscense -->
                     <div class="element">
                         <img src="src/img/car.svg" draggable="false">
                         <p>Permis B</p>
                     </div>
+                    <!-- Birthday Date -->
                     <div class="element">
                         <img src="src/img/birthday.svg" draggable="false">
                         <p>19/01/04</p>
                     </div>
                 </div>
-
+                <!-- CV Button -->
                 <div class="CV_button">
                     <div class="visible_button">
+                        <!-- Hidden Button Part for animation -->
                         <div class="hidden_button">
                             <p>VOIR MON CV</p>
                         </div>
@@ -120,9 +137,10 @@
                     </div>
                 </div>
             </section>
-
+            <!-- Contact Page -->
             <section id="contact">
                 <div class="contact_container">
+                    <!-- Contact Left Part -->
                     <section class="contact--left_side">
                         <p class="title">CONTACTEZ<br><span>MOI</span></p>
                         <div class="bottom">
@@ -147,13 +165,15 @@
                             </div>
                         </div>
                     </section>
+                    <!-- Contact Right Part -->
                     <section class="contact--right_side">
                         <div class="input_box">
-                            <input type="text" placeholder="Nom" required>
-                            <input type="text" placeholder="Prénom" required>
-                            <input type="text" placeholder="E-mail" required>
-                            <textarea placeholder="Message" required></textarea>
+                            <input type="text" placeholder="Nom" required> <!-- Surname Input -->
+                            <input type="text" placeholder="Prénom" required> <!-- Name Input -->
+                            <input type="text" placeholder="E-mail" required> <!-- Email Input -->
+                            <textarea placeholder="Message" required></textarea> <!-- Message Text Area -->
                             <div>
+                                <!-- Sending Button -->
                                 <button class="button_send">
                                     <p>ENVOYER</p>
                                     <img src="src/img/chevron-right.svg">
@@ -164,19 +184,25 @@
                 </div>
             </section>
         </section>
-
+        <!-- Right Side Bar -->
         <section class="side_bar--right">
+            <!-- Gray Bar -->
             <div></div>
             <p class="e-mail">philippe.vivesc@gmail.com</p>
         </section>
     </main>
-
+    <!-- Modal Window For CV -->
     <div class="modal_CV">
+        <!-- Closing Button -->
         <div class="modal_close_button">
             <img class= "modal_close_button_img" src="src/img/xmark.svg">
         </div>
+        <!-- CV Image -->
         <div class="CV_img" style="background-image: url(src/img/CV.png);"></div>
     </div>
 </body>
+<!-- Script JS file
+     At the bottom of the file to be loaded once the whole site is already loaded
+-->
 <script src="script/script.js"></script>
 </html>

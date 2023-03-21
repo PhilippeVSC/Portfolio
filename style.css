@@ -1,17 +1,17 @@
 /** Import some fonts **/
 @font-face {
     font-family: 'CascadiaMono';
-    src: url('../src/font/CascadiaMono.ttf')
+    src: url('src/font/CascadiaMono.ttf')
 }
 
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url('../src/font/Poppins-Bold.ttf')
+    src: url('src/font/Poppins-Bold.ttf')
 }
 
 @font-face {
     font-family: 'Poppins-Medium';
-    src: url('../src/font/Poppins-Medium.ttf')
+    src: url('src/font/Poppins-Medium.ttf')
 }
 
 
@@ -36,6 +36,7 @@
 html {
     scrollbar-width: none; /** Hide the scrollbar on the whole page **/
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 
 /** Set background color on the whole page **/
@@ -57,8 +58,7 @@ main {
     flex-direction: column;
 }
 
-/** ------ Navbar ------ **/
-
+/** ------ Header ------ **/
 header {
     z-index: 5;
     position: fixed;
@@ -70,6 +70,7 @@ header {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** ------ Navbar ------ **/
 nav {
     width: 100%;
     height: 100%;
@@ -81,6 +82,7 @@ nav {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Green numbers before Nav Texts **/
 nav a {
     display: inline;
 
@@ -95,6 +97,7 @@ nav a {
     word-spacing: -5px;
 }
 
+/** Nav Texts **/
 nav span {
     color: var(--white);
     font-family: "Poppins-Bold";
@@ -102,6 +105,7 @@ nav span {
     letter-spacing: 1px;
     word-spacing: 1px;
 
+    /** Hover Animation Background Filling **/
     background: linear-gradient(to right, var(--green), var(--green) 50%, var(--white) 50%);
     
     background-clip: text;
@@ -113,13 +117,13 @@ nav span {
     transition: background-position 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Hover Animation **/
 nav a:hover span {
     cursor: pointer;
     background-position: 0 100%;
 }
 
-/** When scroll **/
-
+/** Header Scrolling parameters for JS **/
 .header--nscroll {
     background-color: var(--dark-gray);
 }
@@ -139,27 +143,30 @@ nav a:hover span {
 }
 
 /** ------ Home Page ------ **/
-
 #home {
     scroll-margin-top: 80px;
     height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-snap-align: center;
 }
 
+/** Summerise Container **/
 .summerise {
     margin-top: 180px;
     width: 82%;
     height: 400px;
 }
 
+/** First Text **/
 .summerise p:nth-of-type(1){
     color: var(--green);
     font-family: "CascadiaMono";
     font-size: 30px;
 }
 
+/** Second Text **/
 .summerise p:nth-of-type(2){
     color: var(--white);
     font-family: "Poppins-Bold";
@@ -167,6 +174,7 @@ nav a:hover span {
     font-size: 82px;
 }
 
+/** Third Text **/
 .summerise p:nth-of-type(3){
     color: var(--gray);
     font-family: "CascadiaMono";
@@ -174,10 +182,12 @@ nav a:hover span {
     line-height: 40px;
 }
 
+/** For green words in texts **/
 .summerise span {
     color: var(--green);
 }
 
+/** Projects Button Container **/
 .projects_button {
     border-radius: 6px;
 
@@ -190,6 +200,7 @@ nav a:hover span {
     text-decoration: none;
 }
 
+/** Visible Button for Animation **/
 .visible_button {
     background-color: var(--dark-gray);
     width: 400px;
@@ -211,6 +222,7 @@ nav a:hover span {
     cursor: pointer;
 }
 
+/** Hidden Button for Animation **/
 .hidden_button {
     z-index: 2;
     color: var(--dark-gray);
@@ -228,83 +240,34 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Skew back the Text **/
 .hidden_button p {
     transform: skew(42deg);
 }
 
 .visible_button:hover .hidden_button {
-    transform: skew(-42deg) translateX(0);
+    transform: skew(-42deg) translateX(0); /** Translate Animation **/
 }
 
-.visible_button:hover:after .hidden_button {
-    transform: skew(-42deg) translateX(480px);
-}
-
+/** Click Animation **/
 .hidden_button:active {
     background-color: var(--dark-green);
 }
 
-
-.modal_CV {
-    display: none;
-
-    position: absolute;
-    left: 20%;
-    top: 200%;
-    z-index: 4;
-    transform: translateX(-50%);
-
-    width: 54vh;
-    height: 80vh;  
-    padding: 5px;
-
-    background-color: var(--white);
-
-    border-radius: 10px;
-}
-
-.modal_CV .CV_img {
-    position: relative;
-
-    width: 100%;
-    height: calc(100% - (30px + 8px));
-
-    background-size: contain;
-}
-
-.modal_CV .modal_close_button {
-    display: flex;
-    justify-content: right;
-    margin: 4px;
-}
-
-.modal_CV .modal_close_button img {
-    width: 30px;
-    height: 30px;
-
-    transition: .15s ease-in;
-
-    background-color: transparent;
-    filter: invert(32%) sepia(89%) saturate(3503%) hue-rotate(342deg) brightness(105%) contrast(102%);
-}
-
-.modal_CV .modal_close_button img:hover {
-    filter: invert(18%) sepia(71%) saturate(4397%) hue-rotate(354deg) brightness(84%) contrast(91%);
-}
-
 /** ------ Projects Page ------ **/
-
 #projects {
-    scroll-margin-top: 80px;
-    scroll-snap-align: center;
+    scroll-margin-top: 160px; /** Move the scroll anchor **/
     height: 100vh;
 
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    
+    scroll-snap-align: center;
 }
 
+/** My Projects Text Container **/
 .my_projects {
     margin-top: 30px;
 
@@ -315,6 +278,7 @@ nav a:hover span {
     align-items: center;
 }
 
+/** My Projects Text **/
 .my_projects p {
     font-family: "CascadiaMono";
     font-size: 25px;
@@ -325,11 +289,13 @@ nav a:hover span {
     animation: blink 0.80s step-end infinite;
 }
 
+/** Blink Animation **/
 @keyframes blink {
     0% { border-color: var(--green) }
     50% { border-color: transparent }
 }
 
+/** Projects Cards Container **/
 .projects--container {
     height: 100%;
     width: 80%;
@@ -340,6 +306,7 @@ nav a:hover span {
     justify-content: space-between;
 }
 
+/** Projects Cards **/
 .project_box {
     border-radius: 6px;
 
@@ -356,6 +323,7 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Projects Cards Title **/
 .project_box .title {
     font-family: "Poppins-Bold";
     font-size: 28px;
@@ -363,11 +331,11 @@ nav a:hover span {
     margin-left: 30px;
     margin-top: 20px;
 
-    transform: translateY(-150%);
+    transform: translateY(-150%); /** Hidden by default **/
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-
+/** Description Box Hidden by default **/
 .description_box {
     width: 100%;
     padding: 20px 20px 20px 20px;
@@ -380,12 +348,14 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Description Text **/
 .description_box p {
     font-family: "CascadiaMono";
     font-size: 20px;
     color: var(--white);
 }
 
+/** Change Words Color **/
 .description_box span {
     color: var(--green);
 }
@@ -394,38 +364,46 @@ nav a:hover span {
     text-decoration: none;
 }
 
+/** Show the description box **/
 .project_box:hover .description_box {
     transform: translateY(0%);
 }
 
+/** Darken the img **/
 .project_box:hover {
     background-color: grey;
     background-blend-mode: multiply;
     background-size: 102%;
 }
 
+/** Show the Title **/
 .project_box:hover .title{
     transform: translateY(0%);
     text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
 }
 
 /** ------ About Page ------ **/
-
 #about {
     height: 100vh;
-    scroll-margin-top: 130px;
+    scroll-margin-top: 180px; /** Move the Scroll Anchor **/
 
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    scroll-snap-align: center;
+
+    padding-top: 50px;
 }
 
+/** "A PROPOS DE MOI" Text **/
 .title {
     font-family: "Poppins-Bold";
     font-size: 50px;
     color: var(--white);
 }
 
+/** About Box **/
 .about_container {
     border-radius: 10px;
     margin-top: 50px;
@@ -437,14 +415,16 @@ nav a:hover span {
     overflow: hidden;
 }
 
+/** Picture of me **/
 .about_container img {
     height: 18vw;
     border-radius: 10px 0 0 10px;
 
-    float: left;
+    float: left; /** Stay on the left side of the About box **/
     margin-right: 20px;
 }
 
+/** About me text **/
 .about_container p {
     margin: 20px;
     font-family: "CascadiaMono";
@@ -453,6 +433,7 @@ nav a:hover span {
     line-height: 30px;
 }
 
+/** Infos container (location, driver's liscence, birthday) */
 .competence_container {
     margin-top: 30px;
 
@@ -466,6 +447,7 @@ nav a:hover span {
     justify-content: space-between;
 }
 
+/** Target all elements */
 .competence_container .element {
     display: inline-flex;
     align-items: center;
@@ -475,12 +457,14 @@ nav a:hover span {
     color: var(--white);
 }
 
+/** Infos icons **/
 .competence_container img {
     margin: 10px;
     height: 1.5vw;
     filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(213deg) brightness(103%) contrast(102%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
 }
 
+/** Open Modal CV Button **/
 .CV_button {
     border-radius: 6px;
 
@@ -493,7 +477,6 @@ nav a:hover span {
 }
 
 /** ------ Contact Page ------**/
-
 #contact {
     width: 100%;
     height: 70vh;
@@ -501,9 +484,11 @@ nav a:hover span {
     display: flex;
     justify-content: center;
 
-    scroll-margin-top: 250px;
+    scroll-margin-top: 100px; /** Move the Scroll Anchor **/
+    scroll-snap-align: center;
 }
 
+/** Contain the Left Side and the Right Side of the Contact Page **/
 .contact_container {
     width: 80%;
     height: 100%;
@@ -513,14 +498,10 @@ nav a:hover span {
     justify-content: space-evenly;
 }
 
+/** Define each parts size **/
 .contact--left_side, .contact--right_side {
     width: 40%;
     height: 500px;
-}
-
-.contact--right_side {
-    display: flex;
-    justify-content: center;
 }
 
 .contact--left_side {
@@ -529,6 +510,7 @@ nav a:hover span {
     flex-direction: column;
 }
 
+/** 'Contactez Moi' Title */
 .contact--left_side .title {
     font-family: "Poppins-Bold";
     font-size: 50px;
@@ -537,10 +519,12 @@ nav a:hover span {
     margin-left: 50px;
 }
 
+/** Change the color of the 'Moi' word **/
 .contact--left_side span {
     color: var(--green);
 }
 
+/** Container of the Email and Phone number **/
 .contact--left_side .bottom {
     display: flex;
     flex-direction: column;
@@ -558,6 +542,7 @@ nav a:hover span {
     width: calc(100% - 100px);
 }
 
+/** Phone Number - Email icon **/
 .phone_number img, .email_adress img {
     width:2.2em;
     margin-right: 15px;
@@ -565,6 +550,7 @@ nav a:hover span {
     filter: invert(56%) sepia(71%) saturate(0%) hue-rotate(156deg) brightness(89%) contrast(92%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
 }
 
+/** Phone Number - Email Texts */
 .phone_number p, .email_adress p {
     font-family: "Poppins-Medium";
     font-size: 20px;
@@ -572,12 +558,14 @@ nav a:hover span {
     color: var(--gray);
 }
 
+/** Gray Bar at the bottom of the Email **/
 .email_adress {
     margin-top: 10px;
     padding-bottom: 30px;
     border-bottom: 2px solid var(--gray);
 }
 
+/** Reddit, Instagram & Linkedin icons container */
 .large_icon_container {
     width: 100%;
     height: 125px;
@@ -587,6 +575,7 @@ nav a:hover span {
     justify-content: space-evenly;
 }
 
+/** Black Cirgle **/
 .large_icon_container a {
     width: 5em;
     height: 5em;
@@ -603,11 +592,13 @@ nav a:hover span {
     transition: all .2s ease-in-out;
 }
 
+/** Reddit, Instagram & Linkedin icons **/
 .contact-icon {
     width: 2em;
     filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(213deg) brightness(103%) contrast(102%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
 }
 
+/** Animation on hover **/
 .large_icon_container a:hover {
     outline: 2px solid var(--white);
     outline-offset: 4px;
@@ -615,14 +606,19 @@ nav a:hover span {
     background-color: var(--white);
 }
 
+/** Change the SVG color on hover  **/
 .large_icon_container a:hover .contact-icon {
     filter: invert(0%) sepia(40%) saturate(0%) hue-rotate(211deg) brightness(104%) contrast(87%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
 }
 
 
-/** RIGHT PART **/
+/** Contact Right Part **/
+.contact--right_side {
+    display: flex;
+    justify-content: center;
+}
 
-
+/** Input Box **/
 .input_box {
     background-color: var(--black);
     width: 90%;
@@ -634,6 +630,7 @@ nav a:hover span {
     padding-top: 10px;
 }
 
+/** Style the Surname, Name & Email inputs **/
 .input_box input {
     outline: none;
     margin: 30px 40px 0 40px;
@@ -650,6 +647,7 @@ nav a:hover span {
     transition: 0.3s;
 }
 
+/** Style the Text Area **/
 .input_box textarea {
     background-color: transparent;
 
@@ -677,12 +675,14 @@ nav a:hover span {
     scrollbar-color: var(--green) transparent;
 }
 
+/** When Focused change the text & border to white **/
 .input_box textarea:focus, input:focus{
     outline: 0;
     border-color: var(--white);
     color: var(--white);
 }
 
+/** Button Container **/
 .input_box div {
     display: flex;
     justify-content: right;
@@ -691,6 +691,7 @@ nav a:hover span {
     margin: 15px 0 40px 0;
 }
 
+/** Sending Button **/
 .button_send {
     background-color: var(--dark-green);
 
@@ -707,6 +708,7 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Sending Button Text 'Envoyer' **/
 .button_send p {
     font-family: "Poppins-Bold";
     font-size: 15px;
@@ -714,6 +716,7 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Arrow Svg Icon **/
 .button_send img {
     position: absolute;
 
@@ -739,7 +742,6 @@ nav a:hover span {
 }
 
 /**------ Side Bar ------**/
-
 .side_bar--left, .side_bar--right {
     position: relative;
     display: flex;
@@ -750,13 +752,15 @@ nav a:hover span {
     flex-direction: column-reverse;
 }
 
+/** Gray bar **/
 .side_bar--left div, .side_bar--right div {
     width: 4px;
-    height: calc(100% - 650px);
+    height: calc(100% - 650px); /** -650px for the empty space in #home **/
 
     background-color: var(--gray);
 }
 
+/** Changethe colors of the left bar icons & add transition for the Hover animation **/
 .side_bar--left .icon {
     width: 26px;
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -771,11 +775,13 @@ nav a:hover span {
     margin-bottom: 45px;
 }
 
+/** Shift icon when hover **/
 .icon:hover {
     cursor: pointer;
     transform: translateX(6px);
 }
 
+/** Style the Email in the right sidebar */
 .side_bar--right p {
     font-family: "CascadiaMono";
     font-size: 21px;
@@ -785,4 +791,63 @@ nav a:hover span {
     transform: translateX(-50%);
 
     margin-bottom: 36px;
+}
+
+/** Modal CV Window **/
+.modal_CV {
+    display: none;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    position: absolute;
+    left: 50%;
+    top: 200%;
+    z-index: 4;
+    transform: translateX(-50%);
+
+    width: 54vh;
+    height: 80vh;  
+    padding: 5px;
+
+    background-color: var(--white);
+
+    border-radius: 10px;
+}
+
+.modal_CV:active {
+    cursor: move;
+}
+
+/** CV img **/
+.modal_CV .CV_img {
+    position: relative;
+
+    width: 100%;
+    height: calc(100% - (30px + 8px));
+
+    background-size: contain;
+}
+
+/** Closing Button Container **/
+.modal_CV .modal_close_button {
+    display: flex;
+    justify-content: right;
+    margin: 4px;
+}
+
+/** Closing Button Img **/
+.modal_CV .modal_close_button img {
+    width: 30px;
+    height: 30px;
+
+    /** For the Hover Animation **/
+    transition: .15s ease-in;
+
+    background-color: transparent;
+    filter: invert(32%) sepia(89%) saturate(3503%) hue-rotate(342deg) brightness(105%) contrast(102%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
+}
+
+/** Change Close Button Img color on hover */
+.modal_CV .modal_close_button img:hover {
+    filter: invert(18%) sepia(71%) saturate(4397%) hue-rotate(354deg) brightness(84%) contrast(91%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
 }

@@ -31,3 +31,20 @@ openModal.onclick = () => {
 closeModal.onclick = () => {
     modal.style.display = 'none';
 }
+
+function onDrag({movementX, movementY}){
+    let getStyle = window.getComputedStyle(modal);
+    let left = parseInt(getStyle.left);
+    let top = parseInt(getStyle.top);
+    
+    modal.style.left = `${left + movementX}px`;
+    modal.style.top = `${top + movementY}px`;
+}
+
+modal.addEventListener("mousedown", () => {
+    modal.addEventListener("mousemove", onDrag);
+});
+
+document.addEventListener("mouseup", () => {
+    modal.removeEventListener("mousemove", onDrag);
+})

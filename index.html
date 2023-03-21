@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('NCfbALJTp8EgwsGn1');
+        })();
+    </script>
     <title>Portfolio</title>
 </head>
 <body>
@@ -168,13 +174,14 @@
                     <!-- Contact Right Part -->
                     <section class="contact--right_side">
                         <div class="input_box">
-                            <input type="text" placeholder="Nom" required> <!-- Surname Input -->
-                            <input type="text" placeholder="Prénom" required> <!-- Name Input -->
-                            <input type="text" placeholder="E-mail" required> <!-- Email Input -->
-                            <textarea placeholder="Message" required></textarea> <!-- Message Text Area -->
+                            <input id="Surname" type="text" placeholder="Nom" required> <!-- Surname Input -->
+                            <input id="Name" type="text" placeholder="Prénom" required> <!-- Name Input -->
+                            <input id="Email" type="email" placeholder="E-mail" required> <!-- Email Input -->
+                            <textarea id="Message" placeholder="Message" required></textarea> <!-- Message Text Area -->
                             <div>
                                 <!-- Sending Button -->
-                                <button class="button_send">
+                                <p id="alert"></p>
+                                <button class="button_send" onclick="sendMail()">
                                     <p>ENVOYER</p>
                                     <img src="src/img/chevron-right.svg">
                                 </button>

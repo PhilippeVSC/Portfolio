@@ -48,3 +48,25 @@ modal.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
     modal.removeEventListener("mousemove", onDrag);
 })
+
+// Contact Send Mail
+
+function sendMail() {
+    let Alert = document.getElementById("alert");
+
+    var params = {
+        from_name : (document.getElementById("Surname").value + " " + document.getElementById("Name").value),
+        email_id : document.getElementById("Email").value,
+        message : document.getElementById("Message").value
+    }
+    emailjs.send("service_crf037n", "template_0jw75na", params)
+        .then(function(response) {
+            Alert.style.color = "#b2ffa9";
+            Alert.innerHTML = "Message envoyé !"
+            console.log('SUCCESS!', response.status, response.text);
+         }, function(error) {
+            Alert.style.color = "#ff3636";
+            Alert.innerHTML = "Erreur";
+            console.log('FAILED...', error);
+    });
+}

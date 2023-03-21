@@ -36,7 +36,7 @@
 html {
     scrollbar-width: none; /** Hide the scrollbar on the whole page **/
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
 }
 
 /** Set background color on the whole page **/
@@ -490,7 +490,7 @@ nav a:hover span {
 
 /** Contain the Left Side and the Right Side of the Contact Page **/
 .contact_container {
-    width: 80%;
+    width: 90%;
     height: 100%;
 
     display: flex;
@@ -708,6 +708,19 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.input_box div {
+    display: flex;
+    align-items: center;
+}
+
+/** Alert Message **/
+#alert {
+    margin-right: 40px;
+
+    font-family: "CascadiaMono";
+    font-size: 16px;
+}
+
 /** Sending Button Text 'Envoyer' **/
 .button_send p {
     font-family: "Poppins-Bold";
@@ -729,6 +742,7 @@ nav a:hover span {
 }
 
 .button_send:hover {
+    cursor: pointer;
     background-color: var(--green);
 }
 
@@ -739,6 +753,10 @@ nav a:hover span {
 .button_send:hover img {
     opacity: 100%;
     transform: translateX(300%);
+}
+
+.button_send:active {
+    background-color: var(--dark-green);
 }
 
 /**------ Side Bar ------**/

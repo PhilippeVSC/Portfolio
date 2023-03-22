@@ -53,7 +53,7 @@ main {
 
 /** Container for the content in the center **/
 .center {
-    width: calc(100% - 240px);
+    width: calc(100% - 12%);
     display: flex;
     flex-direction: column;
 }
@@ -163,7 +163,7 @@ nav a:hover span {
 .summerise p:nth-of-type(1){
     color: var(--green);
     font-family: "CascadiaMono";
-    font-size: 30px;
+    font-size: 1.5vw;
 }
 
 /** Second Text **/
@@ -171,15 +171,15 @@ nav a:hover span {
     color: var(--white);
     font-family: "Poppins-Bold";
     margin: 20px 0 40px 0;
-    font-size: 82px;
+    font-size: 4.2vw;
 }
 
 /** Third Text **/
 .summerise p:nth-of-type(3){
     color: var(--gray);
     font-family: "CascadiaMono";
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 1.5vw;
+    line-height: 1.85vw;
 }
 
 /** For green words in texts **/
@@ -428,9 +428,9 @@ nav a:hover span {
 .about_container p {
     margin: 20px;
     font-family: "CascadiaMono";
-    font-size: 24px;
+    font-size: 1.3vw;
     color: var(--gray);
-    line-height: 30px;
+    line-height: 1.6vw;
 }
 
 /** Infos container (location, driver's liscence, birthday) */
@@ -764,7 +764,7 @@ nav a:hover span {
     position: relative;
     display: flex;
 
-    width: 120px;
+    width: 6%;
 
     align-items: center;
     flex-direction: column-reverse;
@@ -772,7 +772,7 @@ nav a:hover span {
 
 /** Gray bar **/
 .side_bar--left div, .side_bar--right div {
-    width: 4px;
+    width: .2vw;
     height: calc(100% - 650px); /** -650px for the empty space in #home **/
 
     background-color: var(--gray);
@@ -868,4 +868,288 @@ nav a:hover span {
 /** Change Close Button Img color on hover */
 .modal_CV .modal_close_button img:hover {
     filter: invert(18%) sepia(71%) saturate(4397%) hue-rotate(354deg) brightness(84%) contrast(91%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
+}
+
+
+@media (max-width: 1400px) {
+
+    /** Side bar **/
+    .side_bar--left div, .side_bar--right div {
+        width: 2px;
+    }
+
+    .side_bar--left .icon {
+        width: 26px;
+    }
+
+    .side_bar--right p {
+        font-size: 20px;
+    }
+
+    /** Summerise Container **/
+    .summerise {
+        margin-left: 26px;
+    }
+
+    /** First Text **/
+    .summerise p:nth-of-type(1){
+        font-size: 28px;
+    }
+
+    /** Second Text **/
+    .summerise p:nth-of-type(2){
+        font-size: 70px;
+    }
+
+    /** Third Text **/
+    .summerise p:nth-of-type(3){
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    /** Projects **/
+
+    .my_projects {
+        width: 90%;
+        height: 100px;
+    }
+
+    .projects--container {
+        width: 90%;
+    }
+
+    .project_box {
+        width: 26vw;
+        height: 26vw;
+    }
+
+    .title {
+        font-size: 46px;
+    }
+
+    .about_container {
+        width: 90%;
+        height: 23vw;
+    }
+
+    .about_container img {
+        height: 23vw;
+    }
+
+    .about_container p {
+        font-size: 1.5vw;
+        line-height: 2vw;
+    }
+
+    .contact_container {
+        justify-content: space-between;
+    }
+
+    .contact--right_side {
+        width: 50%;
+    }
+
+    .contact--left_side {
+        width: 45%;
+    }
+
+    .description_box p {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    /** Side bar **/
+
+    .side_bar--left .icon {
+        width: 24px;
+    }
+
+    .side_bar--right p {
+        font-size: 18px;
+    }
+
+    /** Summerise Container **/
+    .summerise {
+        margin-left: 0px;
+    }
+
+    /** First Text **/
+    .summerise p:nth-of-type(1){
+        font-size: 26px;
+    }
+
+    /** Second Text **/
+    .summerise p:nth-of-type(2){
+        font-size: 64px;
+    }
+
+    /** Third Text **/
+    .summerise p:nth-of-type(3){
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    /** Projects **/
+
+    .my_projects {
+        width: 94%;
+        height: 100px;
+    }
+
+    .projects--container {
+        width: 94%;
+    }
+
+    .project_box {
+        width: 27vw;
+        height: 27vw;
+    }
+
+    .about_container {
+        width: 94%;
+        height: 23vw;
+    }
+
+    .about_container img {
+        height: 23vw;
+    }
+
+    .about_container p {
+        font-size: 1.5vw;
+        line-height: 2vw;
+    }
+
+    .contact_container {
+        width: 98%;
+        justify-content: space-between;
+    }
+
+    .contact--right_side {
+        width: 50%;
+    }
+
+    .contact--left_side {
+        width: 45%;
+    }
+
+    .description_box p {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    html {
+        scroll-snap-type: none;
+    }
+
+    /** Side bar **/
+
+    .side_bar--left, .side_bar--right {
+        display: none;
+    }
+
+    .center {
+        width: 100%;
+    }
+
+    /** Summerise Container **/
+    .summerise {
+        width: 100%;
+        margin-left: 16vw;
+    }
+
+    /** First Text **/
+    .summerise p:nth-of-type(1){
+        font-size: 26px;
+    }
+
+    /** Second Text **/
+    .summerise p:nth-of-type(2){
+        font-size: 64px;
+    }
+
+    /** Third Text **/
+    .summerise p:nth-of-type(3){
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .projects_button {
+        display: none;
+    }
+
+    /** Projects **/
+
+    #projects {
+        display: flex;
+        align-items: center;
+
+        height: fit-content;
+    }
+
+    .my_projects {
+        width: 100%;
+        height: 100px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .projects--container {
+        margin-top: 30px;
+        width: 80vw;
+        height: fit-content
+    }
+
+    .my_projects p {
+        border-left: none;
+
+        font-family: "Poppins-Bold";
+        font-size: 50px;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+
+    .project_box {
+        width: calc(40vw - 4px);
+        height: calc(40vw - 4px);
+        margin-bottom: 8px;
+    }
+
+    .about_container {
+        width: 94%;
+        height: 23vw;
+    }
+
+    .about_container img {
+        height: 23vw;
+    }
+
+    .about_container p {
+        font-size: 1.5vw;
+        line-height: 2vw;
+    }
+
+    .contact_container {
+        width: 98%;
+        justify-content: space-between;
+    }
+
+    .contact--right_side {
+        width: 50%;
+    }
+
+    .contact--left_side {
+        width: 45%;
+    }
+
+    .description_box p {
+        font-size: 18px;
+    }
+
 }

@@ -57,6 +57,67 @@ main {
     display: flex;
     flex-direction: column;
 }
+/** ------ Mobile Menu ------**/
+.mobile_menu {
+    z-index: 5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 15px;
+    display: flex;
+}
+
+/** Menu Icon **/
+.mobile_menu .menu_icon {
+    display: none;
+    width: 60px;
+    height: 60px;
+    margin: 40px;
+    filter: invert(100%) sepia(70%) saturate(102%) hue-rotate(359deg) brightness(116%) contrast(100%);
+}
+
+/** Menu Navbar **/
+.mobile_menu nav {
+    display: none;
+}
+
+/** Menu open **/
+.mobile_menu.active {
+    background-color: var(--black);
+    backdrop-filter: blur(5px);
+    width: fit-content;
+    height: fit-content;
+}
+
+/** Menu open -> Navbar **/
+.mobile_menu.active nav {
+    display: block;
+    width: 100%;
+}
+
+/** Menu open -> ul **/
+.mobile_menu.active ul {
+    margin-right: 40px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+/** Menu open -> Text **/
+.mobile_menu.active a {
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-size: 2vw;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray);
+}
+
+.mobile_menu.active span {
+    font-size: 3vw;
+}
+
 
 /** ------ Header ------ **/
 header {
@@ -245,15 +306,6 @@ nav a:hover span {
     transform: skew(42deg);
 }
 
-.visible_button:hover .hidden_button {
-    transform: skew(-42deg) translateX(0); /** Translate Animation **/
-}
-
-/** Click Animation **/
-.hidden_button:active {
-    background-color: var(--dark-green);
-}
-
 /** ------ Projects Page ------ **/
 #projects {
     scroll-margin-top: 160px; /** Move the scroll anchor **/
@@ -267,6 +319,11 @@ nav a:hover span {
     scroll-snap-align: center;
 }
 
+/** info button for mobile **/
+.info_button_mobile {
+    display: none;
+}
+
 /** My Projects Text Container **/
 .my_projects {
     margin-top: 30px;
@@ -276,6 +333,13 @@ nav a:hover span {
 
     display: flex;
     align-items: center;
+}
+
+.openWindow {
+    transform: translateY(-17.5%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 /** My Projects Text **/
@@ -362,24 +426,6 @@ nav a:hover span {
 
 .project_box {
     text-decoration: none;
-}
-
-/** Show the description box **/
-.project_box:hover .description_box {
-    transform: translateY(0%);
-}
-
-/** Darken the img **/
-.project_box:hover {
-    background-color: grey;
-    background-blend-mode: multiply;
-    background-size: 102%;
-}
-
-/** Show the Title **/
-.project_box:hover .title{
-    transform: translateY(0%);
-    text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
 }
 
 /** ------ About Page ------ **/
@@ -870,6 +916,39 @@ nav a:hover span {
     filter: invert(18%) sepia(71%) saturate(4397%) hue-rotate(354deg) brightness(84%) contrast(91%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
 }
 
+/** Only computer screen size **/
+@media (min-width: 1101px) {
+
+    /** Projects button & CV button **/
+    .visible_button:hover .hidden_button {
+        transform: skew(-42deg) translateX(0); /** Translate Animation **/
+    }
+
+    /** Click Animation **/
+    .hidden_button:active {
+        background-color: var(--dark-green);
+    }
+
+    /** Show the description box **/
+    .project_box:hover .description_box {
+        transform: translateY(0%);
+    }
+
+    /** Darken the img **/
+    .project_box:hover {
+        background-color: grey;
+        background-blend-mode: multiply;
+        background-size: 102%;
+    }
+
+    /** Show the Title **/
+    .project_box:hover .title{
+        transform: translateY(0%);
+        text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
+    }
+
+}
+
 
 @media (max-width: 1400px) {
 
@@ -959,124 +1038,61 @@ nav a:hover span {
 
 }
 
-@media (max-width: 1200px) {
-
-    /** Side bar **/
-
-    .side_bar--left .icon {
-        width: 24px;
-    }
-
-    .side_bar--right p {
-        font-size: 18px;
-    }
-
-    /** Summerise Container **/
-    .summerise {
-        margin-left: 0px;
-    }
-
-    /** First Text **/
-    .summerise p:nth-of-type(1){
-        font-size: 26px;
-    }
-
-    /** Second Text **/
-    .summerise p:nth-of-type(2){
-        font-size: 64px;
-    }
-
-    /** Third Text **/
-    .summerise p:nth-of-type(3){
-        font-size: 26px;
-        line-height: 40px;
-    }
-
-    /** Projects **/
-
-    .my_projects {
-        width: 94%;
-        height: 100px;
-    }
-
-    .projects--container {
-        width: 94%;
-    }
-
-    .project_box {
-        width: 27vw;
-        height: 27vw;
-    }
-
-    .about_container {
-        width: 94%;
-        height: 23vw;
-    }
-
-    .about_container img {
-        height: 23vw;
-    }
-
-    .about_container p {
-        font-size: 1.5vw;
-        line-height: 2vw;
-    }
-
-    .contact_container {
-        width: 98%;
-        justify-content: space-between;
-    }
-
-    .contact--right_side {
-        width: 50%;
-    }
-
-    .contact--left_side {
-        width: 45%;
-    }
-
-    .description_box p {
-        font-size: 18px;
-    }
-
-}
-
 @media (max-width: 1100px) {
 
+    /** remove the magnet scroll **/
     html {
         scroll-snap-type: none;
     }
 
-    /** Side bar **/
+    /** hide the header **/
+    header {
+        display: none;
+    }
 
+    /** replace the header for a menu */
+    .mobile_menu .menu_icon {
+        display: block;
+    }
+
+    /** Side bar **/
     .side_bar--left, .side_bar--right {
         display: none;
     }
 
+    /** Center elements take 100% width space **/
     .center {
+        width: 100%;
+    }
+
+    #home {
+        height: fit-content;
         width: 100%;
     }
 
     /** Summerise Container **/
     .summerise {
+        margin-top: 100px;
         width: 100%;
+        height: fit-content;
         margin-left: 16vw;
     }
 
     /** First Text **/
     .summerise p:nth-of-type(1){
-        font-size: 26px;
+        font-size: 2.8vw;
     }
 
     /** Second Text **/
     .summerise p:nth-of-type(2){
-        font-size: 64px;
+        margin-top: 25px;
+        font-size: 6vw;
     }
 
     /** Third Text **/
     .summerise p:nth-of-type(3){
-        font-size: 26px;
-        line-height: 40px;
+        font-size: 2.8vw;
+        line-height: 4vw;
     }
 
     .projects_button {
@@ -1086,6 +1102,7 @@ nav a:hover span {
     /** Projects **/
 
     #projects {
+        margin-top: 50px;
         display: flex;
         align-items: center;
 
@@ -1100,10 +1117,57 @@ nav a:hover span {
         justify-content: center;
     }
 
+    .info_button_mobile {
+        z-index: 2;
+        display: block;
+        border: none;
+
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 50px;
+
+        border-radius: 50%;
+        outline: 2px solid #111111;
+        outline-offset: -1px;
+
+        background-color: var(--green);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info_button_mobile img {
+        width: 50px;
+        filter: invert(0%) sepia(26%) saturate(5249%) hue-rotate(28deg) brightness(90%) contrast(87%);
+    }
+
     .projects--container {
         margin-top: 30px;
-        width: 80vw;
-        height: fit-content
+        width: calc(100vw - 16vw);
+        height: fit-content;
+    }
+
+    .description_box.mobileactive {
+        transform: translateY(0);
+    }
+
+    .description_box.mobileactive p {
+        font-size: 2vw;
+    }
+
+    .project_box.mobileactive {
+        background-color: grey;
+        background-blend-mode: multiply;
+    }
+
+    .project_box.mobileactive .title {
+        margin-top: 12px;
+        font-size: 3.5vw;
+        transform: translateY(0);
+        text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
     }
 
     .my_projects p {
@@ -1116,36 +1180,133 @@ nav a:hover span {
     }
 
     .project_box {
-        width: calc(40vw - 4px);
-        height: calc(40vw - 4px);
+        width: calc(((100vw - 16vw) / 2) - 4px);
+        height: calc(((100vw - 16vw) / 2) - 4px);
         margin-bottom: 8px;
     }
 
+    #about .title {
+        margin-top: 50px;
+    }
+
     .about_container {
-        width: 94%;
-        height: 23vw;
+        margin-top: 30px;
+        width: calc(100vw - 16vw);
+        height: fit-content;
     }
 
     .about_container img {
+        border-radius: 10px;
         height: 23vw;
     }
 
     .about_container p {
-        font-size: 1.5vw;
-        line-height: 2vw;
+        margin: 30px;
+        font-size: 2.2vw;
+        line-height: 3vw;
+    }
+
+    .competence_container {
+        width: 70vw;
+    }
+
+    .competence_container p {
+        font-size: 2vw;
+    }
+
+    .CV_button {
+        margin-top: 8vw;
+        width: 40vw;
+    }
+
+    .CV_button .visible_button {
+        background-color: var(--green);
+        width: 100%;
+        outline: none;
+    }
+
+    .CV_button .visible_button:active {
+        background-color: var(--dark-green);
+    }
+
+    .CV_button .visible_button p {
+        color: var(--black);
+        font-size: 4vw
+    }
+
+    #contact {
+        margin-top: 100px;
+        height: fit-content;
     }
 
     .contact_container {
-        width: 98%;
+        width: calc(100vw - 16vw);
         justify-content: space-between;
-    }
 
-    .contact--right_side {
-        width: 50%;
+        display: flex;
+        flex-direction: column;
     }
 
     .contact--left_side {
-        width: 45%;
+        width: 100%;
+        height: fit-content;
+
+        display: flex;
+        align-items: center;
+
+        justify-content: normal;
+    }
+
+    .contact--left_side .title {
+        word-spacing: 1.4vw;
+        margin: 0;
+    }
+
+    .contact--left_side .title br {
+        display: none;
+    }
+
+    .contact--left_side .bottom {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }    
+
+    .email_adress, .phone_number {
+        border: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 60px;
+    }
+
+    .email_adress {
+        margin-top: 20px;
+    }
+
+    .large_icon_container {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 2px solid var(--gray);
+    }
+
+    .contact--right_side {
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .input_box {
+        width: 100%;
+    }
+
+    .input_box textarea {
+        height: 20vw;
     }
 
     .description_box p {

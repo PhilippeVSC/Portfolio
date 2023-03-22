@@ -70,3 +70,27 @@ function sendMail() {
             console.log('FAILED...', error);
     });
 }
+
+function showDescription(num) {
+    let project_box = document.getElementsByClassName("project_box")[num];
+    let description_box = document.getElementsByClassName("description_box")[num];
+
+    if(project_box.classList.contains("mobileactive")) {
+        project_box.classList.remove("mobileactive");
+        description_box.classList.remove("mobileactive");
+    } else {
+        project_box.classList.add("mobileactive");
+        description_box.classList.add("mobileactive");
+    }
+}
+
+const mobile_menu_button = document.getElementById("mobile_menu_button");
+const mobile_menu = document.getElementsByClassName("mobile_menu")[0];
+
+mobile_menu_button.addEventListener("click", function() {
+    if(mobile_menu.classList.contains("active")) {
+        mobile_menu.classList.remove("active");
+    } else {
+        mobile_menu.classList.add("active");
+    }
+});

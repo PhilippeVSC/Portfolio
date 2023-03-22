@@ -22,11 +22,23 @@
             <ul>
                 <a href="#home">01. <span>ACCUEIL</span></a>
                 <a href="#projects">02. <span>PROJETS</span></a>
-                <a href="#about">03. <span>A PROPOS</span></a>
+                <a href="#about">03. <span>À PROPOS</span></a>
                 <a href="#contact">04. <span>CONTACT</span></a>
             </ul>
         </nav>
     </header>
+    <!-- mobile menu -->
+    <div class="mobile_menu">
+        <img class="menu_icon" id="mobile_menu_button" src="src/img/menu.svg">
+        <nav>
+            <ul>
+                <a href="#home">01. <span>ACCUEIL</span></a>
+                <a href="#projects">02. <span>PROJETS</span></a>
+                <a href="#about">03. <span>À PROPOS</span></a>
+                <a href="#contact">04. <span>CONTACT</span></a>
+            </ul>
+        </nav>
+    </div>
     <!-- Content -->
     <main>
         <!-- Left Side Bar -->
@@ -73,26 +85,38 @@
                 <!-- Projects container -->
                 <div class="projects--container">
                     <!-- Project n°1 -->
-                    <a class="project_box burgersup" style="background-image: url(src/img/burgersup.PNG);" href="../BurgerSup v3/index.html" target="_blank" draggable="false">
+                    <div class="project_box burgersup" style="background-image: url(src/img/burgersup.PNG);" draggable="false">
                         <p class="title">BURGERSUP</p>
+                        <button class="info_button_mobile" onclick="(showDescription(0))">
+                            <img src="src/img/info.svg">
+                        </button>
+                        <a class="openWindow" href="../BurgerSup v3/index.html" target="_blank"></a>
                         <div class="description_box">
                             <p>Conception d'un site en <span>Html</span>, <span>Css</span> et <span>JS</span> pour comptabiliser les heures supplémentaires. Les heures sont stockées dans des <span>Arrays</span> et son ensuite comptabilisées.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Project n°2 -->
-                    <a class="project_box morpion" style="background-image: url(src/img/Morpion.PNG);" href="../Tic Tac Toe/index.html" target="_blank" draggable="false">
+                    <div class="project_box morpion" style="background-image: url(src/img/Morpion.PNG);" draggable="false">
                         <p class="title">MORPION</p>
+                        <button class="info_button_mobile" onclick="(showDescription(1))">
+                            <img src="src/img/info.svg">
+                        </button>
+                        <a class="openWindow" href="../Tic Tac Toe/index.html" target="_blank"></a>
                         <div class="description_box">
                             <p>Conception d'un <span>Morpion</span> en <span>Html</span>, <span>Css</span> et <span>JS</span>. Première expérimentation avec le <span>darkmode.</span></p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Project n°3 -->
-                    <a class="project_box calculatrice" style="background-image: url(src/img/calculatrice.PNG);" href="../Calculatrice/index.html" target="_blank" draggable="false">
+                    <div class="project_box calculatrice" style="background-image: url(src/img/calculatrice.PNG);" draggable="false">
                         <p class="title">CALCULATRICE</p>
+                        <button class="info_button_mobile" onclick="(showDescription(2))">
+                            <img src="src/img/info.svg">
+                        </button>
+                        <a class="openWindow" href="../Calculatrice/index.html" target="_blank"></a>
                         <div class="description_box">
                             <p>Conception d'une calculatrice en <span>HTML</span>, <span>Css</span> et <span>JS</span>. Première expérimentation avec le <span>responsive</span></p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </section>
             <!-- About Page -->
@@ -148,7 +172,7 @@
                 <div class="contact_container">
                     <!-- Contact Left Part -->
                     <section class="contact--left_side">
-                        <p class="title">CONTACTEZ<br><span>MOI</span></p>
+                        <p class="title">CONTACTEZ <br><span>MOI</span></p>
                         <div class="bottom">
                             <div class="phone_number">
                                 <img src="src/img/phone.svg" draggable="false">

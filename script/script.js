@@ -37,8 +37,10 @@ function onDrag({movementX, movementY}){
     let left = parseInt(getStyle.left);
     let top = parseInt(getStyle.top);
     
+    if(window.innerWidth > 1100){
     modal.style.left = `${left + movementX}px`;
     modal.style.top = `${top + movementY}px`;
+    }
 }
 
 modal.addEventListener("mousedown", () => {

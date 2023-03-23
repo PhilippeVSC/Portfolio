@@ -70,15 +70,20 @@ main {
 /** Menu Icon **/
 .mobile_menu .menu_icon {
     display: none;
-    width: 60px;
-    height: 60px;
-    margin: 40px;
+    width: 8vw;
+    height: 8vw;
+    margin: 8vw;
     filter: invert(100%) sepia(70%) saturate(102%) hue-rotate(359deg) brightness(116%) contrast(100%);
 }
 
 /** Menu Navbar **/
 .mobile_menu nav {
     display: none;
+}
+
+.mobile_menu.active .menu_icon {
+    margin-top: 8vw;
+    margin-right: 4vw;
 }
 
 /** Menu open **/
@@ -109,7 +114,7 @@ main {
 .mobile_menu.active a {
     margin-left: 0;
     margin-bottom: 20px;
-    font-size: 2vw;
+    font-size: 2.4vw;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--gray);
 }
@@ -224,7 +229,7 @@ nav a:hover span {
 .summerise p:nth-of-type(1){
     color: var(--green);
     font-family: "CascadiaMono";
-    font-size: 1.5vw;
+    font-size: 2.2vw;
 }
 
 /** Second Text **/
@@ -232,15 +237,15 @@ nav a:hover span {
     color: var(--white);
     font-family: "Poppins-Bold";
     margin: 20px 0 40px 0;
-    font-size: 4.2vw;
+    font-size: 4.8vw;
 }
 
 /** Third Text **/
 .summerise p:nth-of-type(3){
     color: var(--gray);
     font-family: "CascadiaMono";
-    font-size: 1.5vw;
-    line-height: 1.85vw;
+    font-size: 2.2vw;
+    line-height: 3vw;
 }
 
 /** For green words in texts **/
@@ -254,7 +259,7 @@ nav a:hover span {
 
     height: 95px;
     width: 400px;
-    margin-top: 120px;
+    margin-top: 8vw;
     position: relative;
 
     overflow: hidden;
@@ -972,17 +977,17 @@ nav a:hover span {
 
     /** First Text **/
     .summerise p:nth-of-type(1){
-        font-size: 28px;
+        font-size: 2.6vw;
     }
 
     /** Second Text **/
     .summerise p:nth-of-type(2){
-        font-size: 70px;
+        font-size: 5.2vw;
     }
 
     /** Third Text **/
     .summerise p:nth-of-type(3){
-        font-size: 28px;
+        font-size: 2.6vw;
         line-height: 40px;
     }
 
@@ -1102,16 +1107,17 @@ nav a:hover span {
     /** Projects **/
 
     #projects {
-        margin-top: 50px;
+        margin-top: 10vw;
         display: flex;
         align-items: center;
 
         height: fit-content;
+        scroll-margin-top: 0;
     }
 
     .my_projects {
         width: 100%;
-        height: 100px;
+        height: fit-content;
 
         display: flex;
         justify-content: center;
@@ -1173,8 +1179,8 @@ nav a:hover span {
     .my_projects p {
         border-left: none;
 
+        font-size: 7vw;
         font-family: "Poppins-Bold";
-        font-size: 50px;
         text-transform: uppercase;
         color: var(--white);
     }
@@ -1185,8 +1191,15 @@ nav a:hover span {
         margin-bottom: 8px;
     }
 
+    #about {
+        margin-top: 15vw;
+        padding-top: 0;
+        scroll-margin-top: -40px;
+        height: fit-content;
+    }
+
     #about .title {
-        margin-top: 50px;
+        font-size:  7vw;
     }
 
     .about_container {
@@ -1207,16 +1220,23 @@ nav a:hover span {
     }
 
     .competence_container {
+        margin-top: 4vw;
         width: 70vw;
     }
 
+    .competence_container img {
+        width: 3vw;
+        height: 3vw;
+    }
+
     .competence_container p {
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
 
     .CV_button {
         margin-top: 8vw;
         width: 40vw;
+        height: 15vw;
     }
 
     .CV_button .visible_button {
@@ -1234,8 +1254,13 @@ nav a:hover span {
         font-size: 4vw
     }
 
+    .modal_CV {
+        width: 62vh;
+        height: 90vh;  
+    }
+
     #contact {
-        margin-top: 100px;
+        margin-top: 15vw;
         height: fit-content;
     }
 
@@ -1258,6 +1283,7 @@ nav a:hover span {
     }
 
     .contact--left_side .title {
+        font-size: 7vw;
         word-spacing: 1.4vw;
         margin: 0;
     }
@@ -1311,6 +1337,92 @@ nav a:hover span {
 
     .description_box p {
         font-size: 18px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .summerise {
+        margin-top: 10vw;
+    }
+
+    #projects {
+        margin-top: 8vw;
+    }
+
+    .project_box.mobileactive .title {
+        font-size: 6vw;
+    }
+
+    .project_box.mobileactive p {
+        font-size: 4vw;
+    }
+
+    .my_projects {
+        height: fit-content;
+    }
+
+    .my_projects p {
+        font-size: 6vw;
+    }
+
+    .projects--container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project_box {
+        width: calc(100vw - 16vw);
+        height: calc(100vw - 16vw);
+    }
+
+    #about {
+        margin-top: 8vw;
+    }
+
+    .about_container p {
+        font-size: 3.5vw;
+        line-height: 4.4vw;
+    }
+
+    .competence_container {
+        margin-top: 4vw
+    }
+
+    .competence_container .element img {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .competence_container .element p {
+        font-size: 3vw;
+    }
+
+    .modal_CV {
+        width: 80vw;
+        height: 120vw;  
+    }
+
+    .phone_number, .email_adress {
+        width: 100%;
+    }
+
+    .phone_number img, .email_adress img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .phone_number p, .email_adress p {
+        font-size: 4vw;
+    }
+
+    #Surname, #Name, #Email, #Message {
+        font-size: 4vw;
+    }
+
+    .input_box textarea {
+        height: 20vh;
     }
 
 }

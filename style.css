@@ -81,9 +81,9 @@ main {
     display: none;
 }
 
+/** Menu Icon Margin **/
 .mobile_menu.active .menu_icon {
-    margin-top: 8vw;
-    margin-right: 4vw;
+    margin: 8vw;
 }
 
 /** Menu open **/
@@ -102,11 +102,11 @@ main {
 
 /** Menu open -> ul **/
 .mobile_menu.active ul {
-    margin-right: 40px;
+    margin-right: 8vw;
     width: fit-content;
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    padding-top: 8vw;
     margin-bottom: 30px;
 }
 
@@ -792,6 +792,7 @@ nav a:hover span {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/** Button Hover animation **/
 .button_send:hover {
     cursor: pointer;
     background-color: var(--green);
@@ -806,6 +807,7 @@ nav a:hover span {
     transform: translateX(300%);
 }
 
+/** Button Clicked **/
 .button_send:active {
     background-color: var(--dark-green);
 }
@@ -872,7 +874,8 @@ nav a:hover span {
     left: 50%;
     top: 200%;
     z-index: 4;
-    transform: translateX(-50%);
+
+    transform: translateX(-50%); /** Translate Modal to middle screen **/
 
     width: 54vh;
     height: 80vh;  
@@ -883,6 +886,7 @@ nav a:hover span {
     border-radius: 10px;
 }
 
+/** Change cursor when click **/
 .modal_CV:active {
     cursor: move;
 }
@@ -992,57 +996,63 @@ nav a:hover span {
     }
 
     /** Projects **/
-
     .my_projects {
         width: 90%;
         height: 100px;
     }
 
+    /** Project box container **/
     .projects--container {
         width: 90%;
     }
 
+    /** Project box **/
     .project_box {
         width: 26vw;
         height: 26vw;
     }
 
+    /** Project box Title **/
     .title {
         font-size: 46px;
     }
 
+    /** Project Description **/
+    .description_box p {
+        font-size: 18px;
+    }
+
+    /** About Container **/
     .about_container {
         width: 90%;
         height: 23vw;
+
+        justify-content: space-between;
     }
 
+    /** About Img **/
     .about_container img {
         height: 23vw;
     }
 
+    /** About Text **/
     .about_container p {
         font-size: 1.5vw;
         line-height: 2vw;
     }
 
-    .contact_container {
-        justify-content: space-between;
-    }
-
+    /** Contact Input **/
     .contact--right_side {
         width: 50%;
     }
 
+    /** Contact Info **/
     .contact--left_side {
         width: 45%;
     }
-
-    .description_box p {
-        font-size: 18px;
-    }
-
 }
 
+/** Tablet Width **/
 @media (max-width: 1100px) {
 
     /** remove the magnet scroll **/
@@ -1070,6 +1080,7 @@ nav a:hover span {
         width: 100%;
     }
 
+    /**------- Home ------**/
     #home {
         height: fit-content;
         width: 100%;
@@ -1100,12 +1111,12 @@ nav a:hover span {
         line-height: 4vw;
     }
 
+    /** Hide the project button **/
     .projects_button {
         display: none;
     }
 
-    /** Projects **/
-
+    /**------ Projects ------**/
     #projects {
         margin-top: 10vw;
         display: flex;
@@ -1115,6 +1126,7 @@ nav a:hover span {
         scroll-margin-top: 0;
     }
 
+    /** Title **/
     .my_projects {
         width: 100%;
         height: fit-content;
@@ -1123,6 +1135,7 @@ nav a:hover span {
         justify-content: center;
     }
 
+    /** Info button that show description and title **/
     .info_button_mobile {
         z-index: 2;
         display: block;
@@ -1145,30 +1158,36 @@ nav a:hover span {
         justify-content: center;
     }
 
+    /** Info Button Icon **/
     .info_button_mobile img {
         width: 50px;
         filter: invert(0%) sepia(26%) saturate(5249%) hue-rotate(28deg) brightness(90%) contrast(87%);
     }
 
+    /** Projects Container **/
     .projects--container {
         margin-top: 30px;
         width: calc(100vw - 16vw);
         height: fit-content;
     }
 
+    /** When Info Button Clicked **/
     .description_box.mobileactive {
         transform: translateY(0);
     }
 
+    /** Project Description **/
     .description_box.mobileactive p {
         font-size: 2vw;
     }
 
+    /** Darken the background image **/
     .project_box.mobileactive {
         background-color: grey;
         background-blend-mode: multiply;
     }
 
+    /** Project Title **/
     .project_box.mobileactive .title {
         margin-top: 12px;
         font-size: 3.5vw;
@@ -1176,6 +1195,7 @@ nav a:hover span {
         text-shadow: 0px 7px 8px #111111f8,0px 5px 25px #111111f8;
     }
 
+    /** Title **/
     .my_projects p {
         border-left: none;
 
@@ -1185,12 +1205,14 @@ nav a:hover span {
         color: var(--white);
     }
 
+    /** Calc Project Box width **/
     .project_box {
         width: calc(((100vw - 16vw) / 2) - 4px);
         height: calc(((100vw - 16vw) / 2) - 4px);
         margin-bottom: 8px;
     }
 
+    /**------ About ------ **/
     #about {
         margin-top: 15vw;
         padding-top: 0;
@@ -1198,72 +1220,92 @@ nav a:hover span {
         height: fit-content;
     }
 
+    /** Title **/
     #about .title {
         font-size:  7vw;
     }
 
+    /** About text container */
     .about_container {
         margin-top: 30px;
         width: calc(100vw - 16vw);
         height: fit-content;
     }
 
+    /** About picture **/
     .about_container img {
         border-radius: 10px;
         height: 23vw;
     }
 
+    /** About text **/
     .about_container p {
         margin: 30px;
         font-size: 2.2vw;
         line-height: 3vw;
     }
 
+    /** Location, Driver's liscence & birthday date container */
     .competence_container {
         margin-top: 4vw;
         width: 70vw;
     }
 
+    /** Competence Icons **/
     .competence_container img {
         width: 3vw;
         height: 3vw;
     }
 
+    /** Competence Text **/
     .competence_container p {
         font-size: 2.5vw;
     }
 
+    /** Open Modal CV button **/
     .CV_button {
         margin-top: 8vw;
-        width: 40vw;
-        height: 15vw;
+        width: 50vw;
+        height: 10vw;
     }
 
+    /** CV button visible part **/
     .CV_button .visible_button {
         background-color: var(--green);
+        height: 100%;
         width: 100%;
         outline: none;
     }
 
+    /** CV button visible part clicked **/
     .CV_button .visible_button:active {
         background-color: var(--dark-green);
     }
 
+    /** CV button visible part text **/
     .CV_button .visible_button p {
         color: var(--black);
         font-size: 4vw
     }
 
+    /** CV button hidden part **/
+    .CV_button .hidden_button {
+        display: none;
+    }
+
+    /** Modal CV window size **/
     .modal_CV {
         width: 62vh;
         height: 90vh;  
     }
 
+    /**------ Contact ------*/
     #contact {
         margin-top: 15vw;
         height: fit-content;
     }
 
+    /** Contact Container **/
     .contact_container {
         width: calc(100vw - 16vw);
         justify-content: space-between;
@@ -1272,6 +1314,7 @@ nav a:hover span {
         flex-direction: column;
     }
 
+    /** Contact Info Part **/
     .contact--left_side {
         width: 100%;
         height: fit-content;
@@ -1282,16 +1325,19 @@ nav a:hover span {
         justify-content: normal;
     }
 
+    /** 'Contactez Moi' Title **/
     .contact--left_side .title {
         font-size: 7vw;
         word-spacing: 1.4vw;
         margin: 0;
     }
 
+    /** Remove the Title line break  */
     .contact--left_side .title br {
         display: none;
     }
 
+    /** Contact Info Bottom Buttons Container **/
     .contact--left_side .bottom {
         width: 100%;
 
@@ -1302,6 +1348,7 @@ nav a:hover span {
         flex-wrap: wrap;
     }    
 
+    /** Phone Number & Mail adress Container **/
     .email_adress, .phone_number {
         border: none;
         padding: 0;
@@ -1309,16 +1356,19 @@ nav a:hover span {
         margin-top: 60px;
     }
 
+    /** Email Adress container **/
     .email_adress {
         margin-top: 20px;
     }
 
+    /** Bottom Button Container */
     .large_icon_container {
         margin-top: 30px;
         padding-top: 30px;
         border-top: 2px solid var(--gray);
     }
 
+    /** Contact Input Container **/
     .contact--right_side {
 
         margin-top: 30px;
@@ -1327,100 +1377,124 @@ nav a:hover span {
         height: fit-content;
     }
 
+    /** Inputs Box **/
     .input_box {
         width: 100%;
     }
 
+    /** Message Input **/
     .input_box textarea {
         height: 20vw;
     }
-
-    .description_box p {
-        font-size: 18px;
-    }
-
 }
 
+/** Phone Width **/
 @media (max-width: 550px) {
 
+    /** Home Summerise **/
     .summerise {
         margin-top: 10vw;
     }
 
+    /**------ Projects ------**/
     #projects {
         margin-top: 8vw;
     }
 
+    /** Project Box Title when Info button clicked **/
     .project_box.mobileactive .title {
         font-size: 6vw;
     }
 
+    /** Project Box Description when Info button clicked **/
     .project_box.mobileactive p {
         font-size: 4vw;
     }
 
+    /** Project Title Container **/
     .my_projects {
         height: fit-content;
     }
 
+    /** Project Title **/
     .my_projects p {
         font-size: 6vw;
     }
 
+    /** Project Box Container **/
     .projects--container {
         display: flex;
         justify-content: center;
     }
 
+    /** Project Box Size **/
     .project_box {
         width: calc(100vw - 16vw);
         height: calc(100vw - 16vw);
     }
 
+    /**------ About ------ **/
     #about {
         margin-top: 8vw;
     }
 
+    /** About Text **/
     .about_container p {
         font-size: 3.5vw;
         line-height: 4.4vw;
     }
 
+    /** Competence Container **/
     .competence_container {
         margin-top: 4vw
     }
 
+    /** Competence Icon **/
     .competence_container .element img {
         width: 4vw;
         height: 4vw;
     }
 
+    /** Competence Text **/
     .competence_container .element p {
         font-size: 3vw;
     }
 
+    /** Modal CV Window **/
     .modal_CV {
         width: 80vw;
         height: 120vw;  
     }
 
+    /** Open Modal CV button **/
+    .CV_button {
+        margin-top: 8vw;
+        width: 70vw;
+        height: 15vw;
+    }
+
+    /** Phone number & email adress Container **/
     .phone_number, .email_adress {
         width: 100%;
     }
 
+    /** Phone number & email adress Icon **/
     .phone_number img, .email_adress img {
         width: 6vw;
         height: 6vw;
     }
 
+    /** Phone number & email adress text **/
     .phone_number p, .email_adress p {
         font-size: 4vw;
     }
 
+    /** Font size of all inputs **/
     #Surname, #Name, #Email, #Message {
         font-size: 4vw;
     }
 
+    /** Message Input **/
     .input_box textarea {
         height: 20vh;
     }

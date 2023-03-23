@@ -32,51 +32,68 @@ closeModal.onclick = () => {
     modal.style.display = 'none';
 }
 
+/** Move Modal CV window Function */
 function onDrag({movementX, movementY}){
     let getStyle = window.getComputedStyle(modal);
-    let left = parseInt(getStyle.left);
-    let top = parseInt(getStyle.top);
+    let left = parseInt(getStyle.left); /** Get left position */
+    let top = parseInt(getStyle.top); /** Get Top position */
     
-    if(window.innerWidth > 1100){
-    modal.style.left = `${left + movementX}px`;
-    modal.style.top = `${top + movementY}px`;
+    if(window.innerWidth > 1100){ /** If Computer Screen Size */
+    modal.style.left = `${left + movementX}px`; /** Change Modal Window left Position */
+    modal.style.top = `${top + movementY}px`; /** Change Modal Window Right Position */
     }
 }
 
+/** When Modal Window clicked -> Window Follow Cursor */
 modal.addEventListener("mousedown", () => {
     modal.addEventListener("mousemove", onDrag);
 });
 
+/** When Modal Window not clicked -> Window doesnt follow Cursor */
 document.addEventListener("mouseup", () => {
     modal.removeEventListener("mousemove", onDrag);
 })
 
 // Contact Send Mail
-
 function sendMail() {
-    let Alert = document.getElementById("alert");
+    let alert = document.getElementById("alert"); /** Message Sending Info Text Container */
 
-    var params = {
-        from_name : (document.getElementById("Surname").value + " " + document.getElementById("Name").value),
-        email_id : document.getElementById("Email").value,
-        message : document.getElementById("Message").value
+    let Surname = document.getElementById("Surname").value;
+    let Name = document.getElementById("Name").value;
+    let Email = document.getElementById("Email").value;
+    let Message = document.getElementById("Message").value;
+
+    /** Check if inputs arent empty */
+    if(Surname !== "" && Name !=="" && Email !=="" && Message !== ""){
+        /** User Info **/
+        var params = {
+            from_name : Name + ' ' + Surname,
+            email_id : Email,
+            message : Message
+        }
+
+        /** Send Mail **/
+        emailjs.send("service_crf037n", "template_0jw75na", params) /** 'service_crf037n' = Account to send / 'template_0jw75na' = Mail Template */
+            .then(function(response) { /** If Message Sent  **/
+                alert.style.color = "#b2ffa9";
+                alert.innerHTML = "Message envoyé !"
+            }, function(error) { /** If error  **/
+                alert.style.color = "#ff3636";
+                alert.innerHTML = "Erreur";
+        });
+    } else {
+        /** If input is Empty */
+        alert.style.color = "#ff3636";
+        alert.innerHTML = "Veuillez compléter toutes les cases";
     }
-    emailjs.send("service_crf037n", "template_0jw75na", params)
-        .then(function(response) {
-            Alert.style.color = "#b2ffa9";
-            Alert.innerHTML = "Message envoyé !"
-            console.log('SUCCESS!', response.status, response.text);
-         }, function(error) {
-            Alert.style.color = "#ff3636";
-            Alert.innerHTML = "Erreur";
-            console.log('FAILED...', error);
-    });
 }
 
+/** Mobile Project Info Button Show/Hide */
 function showDescription(num) {
     let project_box = document.getElementsByClassName("project_box")[num];
     let description_box = document.getElementsByClassName("description_box")[num];
 
+    /** If Project Contain Class 'mobileactive' -> Show Project Title & Description */
     if(project_box.classList.contains("mobileactive")) {
         project_box.classList.remove("mobileactive");
         description_box.classList.remove("mobileactive");
@@ -86,9 +103,11 @@ function showDescription(num) {
     }
 }
 
+/** Mobile Nav Menu */
 const mobile_menu_button = document.getElementById("mobile_menu_button");
 const mobile_menu = document.getElementsByClassName("mobile_menu")[0];
 
+/** Open & Close Nav Menu */
 mobile_menu_button.addEventListener("click", function() {
     if(mobile_menu.classList.contains("active")) {
         mobile_menu.classList.remove("active");

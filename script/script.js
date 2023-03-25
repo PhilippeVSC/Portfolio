@@ -65,26 +65,33 @@ function sendMail() {
 
     /** Check if inputs arent empty */
     if(Surname !== "" && Name !=="" && Email !=="" && Message !== ""){
-        /** User Info **/
-        var params = {
-            from_name : Name + ' ' + Surname,
-            email_id : Email,
-            message : Message
-        }
+        /** Check if email contain @ **/
+        if(Email.includes('@')) {
+            /** User Info **/
+            var params = {
+                from_name : Name + ' ' + Surname,
+                email_id : Email,
+                message : Message
+            }
 
-        /** Send Mail **/
-        emailjs.send("service_crf037n", "template_0jw75na", params) /** 'service_crf037n' = Account to send / 'template_0jw75na' = Mail Template */
-            .then(function(response) { /** If Message Sent  **/
-                alert.style.color = "#b2ffa9";
-                alert.innerHTML = "Message envoyé !"
-            }, function(error) { /** If error  **/
-                alert.style.color = "#ff3636";
-                alert.innerHTML = "Erreur";
-        });
+            /** Send Mail **/
+            emailjs.send("service_crf037n", "template_0jw75na", params) /** 'service_crf037n' = Account to send / 'template_0jw75na' = Mail Template */
+                .then(function(response) { /** If Message Sent  **/
+                    alert.style.color = "#b2ffa9";
+                    alert.innerHTML = "Message envoyé !"
+                }, function(error) { /** If error  **/
+                    alert.style.color = "#ff3636";
+                    alert.innerHTML = "Erreur";
+            });
+        } else {
+            /** If Email doesnt contain @ */
+            alert.style.color = "#ff3636";
+            alert.innerHTML = "Adresse E-mail invalide";
+        }
     } else {
         /** If input is Empty */
         alert.style.color = "#ff3636";
-        alert.innerHTML = "Veuillez compléter toutes les cases";
+        alert.innerHTML = "Veuillez renseigner tout les champs";
     }
 }
 

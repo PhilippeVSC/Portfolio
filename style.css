@@ -58,6 +58,10 @@ main {
     flex-direction: column;
 }
 /** ------ Mobile Menu ------**/
+.mobile_menu_container {
+    width: 100%;
+}
+
 .mobile_menu {
     z-index: 5;
     position: fixed;
@@ -479,9 +483,9 @@ nav a:hover span {
 .about_container p {
     margin: 20px;
     font-family: "CascadiaMono";
-    font-size: 1.3vw;
+    font-size: 1.4vw;
     color: var(--gray);
-    line-height: 1.6vw;
+    line-height: 1.65vw;
 }
 
 /** Infos container (location, driver's liscence, birthday) */
@@ -882,7 +886,8 @@ nav a:hover span {
     height: 80vh;  
     padding: 5px;
 
-    background-color: var(--white);
+    background-color: #24283b;
+    outline: 4px solid #0d0d12;
 
     border-radius: 10px;
 }
@@ -899,18 +904,20 @@ nav a:hover span {
     width: 100%;
     height: calc(100% - (30px + 8px));
 
-    background-size: contain;
+    background-size: 113%;
+    background-position: 60% 50%;
 }
 
 /** Closing Button Container **/
 .modal_CV .modal_close_button {
     display: flex;
     justify-content: right;
+    align-items: center;
     margin: 4px;
 }
 
 /** Closing Button Img **/
-.modal_CV .modal_close_button img {
+.modal_CV .modal_close_button_img {
     width: 30px;
     height: 30px;
 
@@ -918,11 +925,26 @@ nav a:hover span {
     transition: .15s ease-in;
 
     background-color: transparent;
+
     filter: invert(32%) sepia(89%) saturate(3503%) hue-rotate(342deg) brightness(105%) contrast(102%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
 }
 
+.modal_CV .modal_close_button .open {
+    filter: invert(89%) sepia(24%) saturate(644%) hue-rotate(55deg) brightness(103%) contrast(103%);
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+/** Open in new tab button **/
+.modal_CV .modal_close_button a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--white);
+}
+
 /** Change Close Button Img color on hover */
-.modal_CV .modal_close_button img:hover {
+.modal_CV .modal_close_button_img:hover {
     filter: invert(18%) sepia(71%) saturate(4397%) hue-rotate(354deg) brightness(84%) contrast(91%); /** Change SVG color using Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp **/
 }
 
@@ -1090,9 +1112,7 @@ nav a:hover span {
     /** Summerise Container **/
     .summerise {
         margin-top: 100px;
-        width: 100%;
         height: fit-content;
-        margin-left: 16vw;
     }
 
     /** First Text **/

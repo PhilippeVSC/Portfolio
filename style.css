@@ -36,7 +36,6 @@
 html {
     scrollbar-width: none; /** Hide the scrollbar on the whole page **/
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
 }
 
 /** Set background color on the whole page **/
@@ -94,8 +93,8 @@ main {
 .mobile_menu.active {
     background-color: var(--black);
     backdrop-filter: blur(5px);
-    width: fit-content;
-    height: fit-content;
+    width: auto;
+    height: auto;
 }
 
 /** Menu open -> Navbar **/
@@ -219,7 +218,6 @@ nav a:hover span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-snap-align: center;
 }
 
 /** Summerise Container **/
@@ -324,8 +322,6 @@ nav a:hover span {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    
-    scroll-snap-align: center;
 }
 
 /** info button for mobile **/
@@ -446,8 +442,6 @@ nav a:hover span {
     align-items: center;
     flex-direction: column;
 
-    scroll-snap-align: center;
-
     padding-top: 50px;
 }
 
@@ -506,6 +500,8 @@ nav a:hover span {
 .competence_container .element {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: calc(100% / 3);
 
     font-family: "Poppins-Medium";
     font-size: 20px;
@@ -514,7 +510,7 @@ nav a:hover span {
 
 /** Infos icons **/
 .competence_container img {
-    margin: 10px;
+    margin-right: 10px;
     height: 1.5vw;
     filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(213deg) brightness(103%) contrast(102%); /** Change SVG color using https://codepen.io/sosuke/pen/Pjoqqp**/
 }
@@ -540,7 +536,6 @@ nav a:hover span {
     justify-content: center;
 
     scroll-margin-top: 100px; /** Move the Scroll Anchor **/
-    scroll-snap-align: center;
 }
 
 /** Contain the Left Side and the Right Side of the Contact Page **/
@@ -683,6 +678,7 @@ nav a:hover span {
     border-radius: 10px;
 
     padding-top: 10px;
+    padding-bottom: 25px;
 }
 
 /** Style the Surname, Name & Email inputs **/
@@ -719,6 +715,8 @@ nav a:hover span {
     -moz-box-shadow: none;
     box-shadow: none;
 
+    box-sizing: content-box;
+
     resize: none;
     margin: 40px 40px 0 40px;
     height: 10vw;
@@ -740,10 +738,10 @@ nav a:hover span {
 /** Button Container **/
 .input_box div {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
 
-    padding-right: 40px;
-    margin: 15px 0 40px 0;
+    margin-top: 25px;
+    padding: 0 40px 0 40px;
 }
 
 /** Sending Button **/
@@ -751,6 +749,7 @@ nav a:hover span {
     background-color: var(--dark-green);
 
     width: 150px;
+    min-width: 150px;
     height: 40px;
 
     border: none;
@@ -770,15 +769,15 @@ nav a:hover span {
 
 /** Alert Message **/
 #alert {
-    margin-left: 40px;
-    margin-right: 40px;
-
     font-family: "CascadiaMono";
-    font-size: 16px;
+    font-size: .8em;
 }
 
 /** Sending Button Text 'Envoyer' **/
 .button_send p {
+    display: flex;
+    flex-wrap: wrap;
+
     font-family: "Poppins-Bold";
     font-size: 15px;
 
@@ -903,6 +902,7 @@ nav a:hover span {
 
     width: 100%;
     height: calc(100% - (30px + 8px));
+    border-radius: 0;
 
     background-size: 113%;
     background-position: 60% 50%;

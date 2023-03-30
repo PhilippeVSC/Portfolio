@@ -315,8 +315,8 @@ nav a:hover span {
 
 /** ------ Projects Page ------ **/
 #projects {
-    scroll-margin-top: 160px; /** Move the scroll anchor **/
-    height: 100vh;
+    scroll-margin-top: 50px; /** Move the scroll anchor **/
+    height: fit-content;
 
     display: flex;
     justify-content: center;
@@ -366,7 +366,7 @@ nav a:hover span {
 
 /** Projects Cards Container **/
 .projects--container {
-    height: 100%;
+    height: fit-content;
     width: 80%;
 
     display: flex;
@@ -377,6 +377,7 @@ nav a:hover span {
 
 /** Projects Cards **/
 .project_box {
+    margin-bottom: 0.8vw;
     border-radius: 6px;
 
     width: 23vw;

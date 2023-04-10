@@ -372,16 +372,15 @@ nav a:hover span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 10px;
 }
 
 /** Projects Cards **/
 .project_box {
-    margin-bottom: 0.8vw;
     border-radius: 6px;
 
-    width: 23vw;
-    height: 23vw;
+    width: 26%;
+    height: 26%;
     position: relative;
 
     background-size: 100%;
